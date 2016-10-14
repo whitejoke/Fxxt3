@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cdcdcd">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:id="@+id/lilyHome"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_margin="5dp"
+          android:orientation="vertical"
+          android:layout_weight="1">
+
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/home_drawable_selected"
+              android:padding="10dp"
+              android:scaleType="centerCrop"
+              android:contentDescription="@string/botttom_description"
+              android:clickable="true" />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="5dp"
+              android:layout_gravity="center"
+              android:text="首页"
+              android:textColor="@drawable/text_selected" />
+
+      </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lilyUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/qishi_drawable_selected"
+            android:padding="10dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:text="骑士圈"
+            android:textColor="@drawable/text_selected" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lilyCar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/qipa_drawable_selected"
+            android:padding="10dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:text="骑葩说"
+            android:textColor="@drawable/text_selected" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lilyMore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/my_drawable_selected"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:text="我的"
+            android:textColor="@drawable/text_selected" />
+
+    </LinearLayout>
+ </LinearLayout>
+</LinearLayout>

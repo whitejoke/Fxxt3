@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_youhui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="优惠券"
+                android:textSize="18sp"
+                android:textColor="#13b7f6"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <TextView
+                android:text="200"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#13b7f6"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/promoPrice" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/layer"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:layout_gravity="right"
+            android:orientation="vertical"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="使用优惠券条件"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <TextView
+                android:text="满30可用此券"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/title" />
+
+            <TextView
+                android:text="使用期限：2015-05-10 2015-02-31"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/date" />
+
+        </LinearLayout>
+    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_judge"
+            android:text="优惠券可用"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:alpha="0.5"
+            android:background="#000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</LinearLayout>

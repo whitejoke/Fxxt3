@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zgy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <!--头部-->
+    <include layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <aizulove.com.fxxt.view.SlidingTabLayout
+            android:id="@+id/id_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            zgy:bottomLineColor="#FFFFFF"
+            zgy:dividerMargin="15dp"
+            zgy:indicatorColor="#13b7f6"
+            zgy:indicatorHeight="5dp"
+            zgy:bottomLineHeight="2dp"
+            android:background="#FFFFFF">
+        </aizulove.com.fxxt.view.SlidingTabLayout>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_view_pager"/>
+
+
+
+</LinearLayout>

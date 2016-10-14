@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--头部-->
+    <include layout="@layout/activity_head" />
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:overlay="false"
+        app:wave_show="true"
+        app:wave_color="@color/material_green"
+        app:wave_height_type="normal">
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+      <LinearLayout
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@mipmap/ic_phone"
+                    android:scaleType="centerInside"
+                    android:layout_width="110dp"
+                    android:layout_height="72dp"
+                    android:id="@+id/img" />
+
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+                  <TextView
+                      android:text="哈哈哈哈哈哈哈哈哈哈"
+                      android:textSize="18sp"
+                      android:textColor="#000000"
+                      android:layout_alignParentTop="true"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/title" />
+
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentBottom="true">
+
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+
+                          <ImageView
+                              android:padding="3dp"
+                              android:src="@mipmap/ic_zt"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+
+                          <TextView
+                              android:text="主题"
+                              android:gravity="left"
+                              android:textSize="15sp"
+                              android:textColor="#000000"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+
+                          <TextView
+                              android:text="23"
+                              android:gravity="left"
+                              android:textSize="15sp"
+                              android:layout_weight="1"
+                              android:textColor="#13b7f6"
+                              android:paddingLeft="5dp"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:id="@+id/quality" />
+
+
+                      </LinearLayout>
+
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+
+                          <ImageView
+                              android:padding="3dp"
+                              android:src="@mipmap/ic_zt"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+
+                          <TextView
+                              android:text="点赞"
+                              android:gravity="left"
+                              android:textSize="15sp"
+                              android:textColor="#000000"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:id="@+id/logozan" />
+
+                          <TextView
+                              android:text="15"
+                              android:gravity="left"
+                              android:textSize="15sp"
+                              android:layout_weight="1"
+                              android:textColor="#13b7f6"
+                              android:paddingLeft="5dp"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:id="@+id/zan" />
+
+                      </LinearLayout>
+
+                  </LinearLayout>
+
+              </RelativeLayout>
+
+      </LinearLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:background="#cdcdcd"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"></View>
+
+    <TextView
+        android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+        android:lines="2"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        android:lineSpacingExtra="3dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/content" />
+
+    <LinearLayout
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@mipmap/gzjlb"
+            android:layout_marginRight="3dp"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:id="@+id/jlbgz" />
+
+    </LinearLayout>
+
+
+    <View
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:background="#cdcdcd"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/line"></View>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/posts"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+    <!--</LinearLayout>-->
+    <aizulove.com.fxxt.view.GridListView
+    android:id="@+id/gdVllistview"
+    android:numColumns="1"
+    android:gravity="center"
+    android:scrollbars="none"
+    android:focusable="true"
+    android:background="#FFFFFF"
+    android:horizontalSpacing="0dp"
+    android:verticalSpacing="0dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:cacheColorHint="#000000"
+    android:stretchMode="columnWidth"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+</LinearLayout>
+
+</ScrollView>
+    </com.cjj.MaterialRefreshLayout>
+</LinearLayout>

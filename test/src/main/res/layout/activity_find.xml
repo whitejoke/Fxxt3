@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F0F0F0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--头部-->
+    <include layout="@layout/activity_head" />
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:hint="写下此刻发现的,想和搭建分享的话题"
+                android:lines="20"
+                android:textSize="15sp"
+                android:paddingLeft="5dp"
+                android:textColor="#CDCDCD"
+                android:layout_margin="10dp"
+                android:layout_height="90dp"
+                android:background="@null"
+                android:layout_width="match_parent"
+                android:id="@+id/findContent" />
+
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/firstll"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/img0" />
+
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/img1" />
+
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/img2" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/fabuButton"
+                android:text="发布"
+                android:layout_margin="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:background="@drawable/button_shape" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"></View>
+</LinearLayout>

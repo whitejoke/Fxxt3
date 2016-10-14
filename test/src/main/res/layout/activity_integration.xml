@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#E6E6E6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/activity_head" />
+    <LinearLayout
+        android:padding="10dp"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_jifen"/>
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#CDCDCD"></View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的积分: "
+            android:textSize="18sp"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90"
+            android:layout_marginBottom="5dp"
+            android:textSize="36sp"
+            android:textColor="#13b7f6"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="积分记录"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:padding="10dp"/>
+
+    <ListView
+        android:id="@+id/lv_integration"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#fff"
+        android:divider="#fff"
+        android:dividerHeight="10dp"
+        android:gravity="center"
+        android:scrollbars="none">
+
+    </ListView>
+</LinearLayout>

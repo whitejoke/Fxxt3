@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#E6E6E6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--头部-->
+    <include layout="@layout/activity_head" />
+
+    <RelativeLayout
+        android:onClick="click"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="当前版本"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:paddingRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/my_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:text="@string/banben"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="#CDCDCD"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"></View>
+
+    <RelativeLayout
+        android:id="@+id/rl_del"
+        android:onClick="click"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="缓存清理"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:paddingRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/my_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/tv_load"
+            android:text="4.73M"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="#CDCDCD"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"></View>
+
+    <RelativeLayout
+        android:id="@+id/rl_rewrite"
+        android:onClick="click"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="修改密码"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:paddingRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+    <View
+        android:background="#CDCDCD"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"></View>
+    <RelativeLayout
+        android:id="@+id/out"
+        android:onClick="click"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="退出当前账号"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:paddingRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/my_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

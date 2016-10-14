@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <!--头部-->
+    <include layout="@layout/activity_head" />
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:text="新闻新闻新闻新闻新闻新闻新闻新闻新闻"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:singleLine="true"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title" />
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="来源:蓝车"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userName" />
+
+       <TextView
+           android:text="日期:2015-05-25"
+           android:gravity="center"
+           android:layout_weight="1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/createTime" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:src="@mipmap/active_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/img" />
+
+    <TextView
+        android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+        android:textSize="13sp"
+        android:lineSpacingExtra="3dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/content" />
+
+    <View
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="5dp" android:background="#CDCDCD"></View>
+
+    <TextView
+        android:text="活动报名"
+        android:textSize="18sp"
+        android:gravity="left|center"
+        android:textColor="@color/colorShape"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp" android:background="#CDCDCD"></View>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="10dp"
+            android:src="@mipmap/yuandian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/botttom_description"/>
+
+        <TextView
+            android:text="活动名称："
+            android:gravity="left|center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="20150525"
+            android:gravity="left|center"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="10dp"
+            android:src="@mipmap/yuandian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/botttom_description"/>
+
+        <TextView
+            android:text="报名时间："
+            android:gravity="left|center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="2015-02-21  2015-03-30"
+            android:gravity="left|center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/date" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="10dp"
+            android:src="@mipmap/yuandian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/botttom_description"/>
+
+        <TextView
+            android:text="活动地址："
+            android:gravity="left|center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="宁波江北区。。"
+            android:gravity="left|center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/address" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="10dp"
+            android:src="@mipmap/yuandian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/botttom_description"/>
+
+        <TextView
+            android:text="活动历时："
+            android:gravity="left|center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="7天"
+            android:gravity="left|center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lishi" />
+
+    </LinearLayout>
+
+
+            <Button
+                android:text="报名参加活动"
+                android:layout_margin="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/button_shape"
+                android:id="@+id/qd" />
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

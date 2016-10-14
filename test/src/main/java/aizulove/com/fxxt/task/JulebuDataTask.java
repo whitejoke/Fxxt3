@@ -1,0 +1,80 @@
+package aizulove.com.fxxt.task;
+
+import android.content.Context;
+import android.os.AsyncTask;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import aizulove.com.fxxt.adapter.LogoAdapter;
+import aizulove.com.fxxt.modle.entity.Logo;
+import aizulove.com.fxxt.utils.JsonParserFactory;
+import aizulove.com.fxxt.utils.NetWork;
+import aizulove.com.fxxt.utils.VariablesOfUrl;
+import aizulove.com.fxxt.view.GridListView;
+import aizulove.com.fxxt.view.ToastSingle;
+
+/**
+ * Created by Administrator on 2016/5/3.
+ */
+public class JulebuDataTask extends AsyncTask<Void, Void, List<Logo>> {
+
+    private Context context;
+    private boolean judgeInternet;
+    private boolean typeFlag=true;
+    private List<Logo> listMessage;
+    private LogoAdapter adapter;
+   private  GridListView listView;
+    private Map<String, String> map;
+    private String url;
+    public JulebuDataTask(Context context,List<Logo> listMessage,LogoAdapter adapter,GridListView listView,Map<String, String> map,String url){
+        super();
+        this.url=url;
+        this.context=context;
+        this.listMessage=listMessage;
+        this.adapter=adapter;
+        this.listView=listView;
+        this.map=map;
+    }
+
+    @Override
+    protected List<Logo> doInBackground(Void... params) {
+        List<Logo> result = null;
+        judgeInternet = NetWork.checkNetWorkStatus(context);
+        try {
+            if (judgeInternet) {
+                String url = VariablesOfUrl.APP_BASE_URL +this.url;// VariablesOfUrl.GETLOGOLIST;
+                System.out.println("url=="+url);
+                StringBuilder jsonStr = NetWork.postStringFromUrl(url, map);
+                if (jsonStr.toString().equals("[]")) {
+                    typeFlag = false;
+                }
+                result = JsonParserFactory.jsonParserLogoList(jsonStr.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = null;
+        }
+        return result;
+    }
+
+    @Override
+    protected void onPostExecute(List<Logo> result) {
+        super.onPostExecute(result);
+        if (judgeInternet) {
+            if (typeFlag) {// 返回有数据
+                if (result != null) {
+                    listMessage.clear();
+                    listMessage.addAll(result);
+                    adapter.notifyDataSetChanged();
+                    listView.onRefreshComplete();
+                }else{
+                    ToastSingle.showToast(context, "参数错误");
+                }
+            }else{
+                ToastSingle.showToast(context, "没有数据");
+            }
+        }else {
+            ToastSingle.showToast(context, "请检查网络连接是否正常");
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zgy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <aizulove.com.fxxt.view.GridListView
+        android:id="@+id/guanzhulistview"
+        android:numColumns="2"
+        android:gravity="center"
+        android:scrollbars="none"
+        android:background="#fff"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
+        android:layout_margin="10dp"
+        android:cacheColorHint="#000000"
+        android:stretchMode="columnWidth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</ScrollView>
+
+
+</LinearLayout>

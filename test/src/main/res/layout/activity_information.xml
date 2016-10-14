@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cdcdcd">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#cdcdcd"></View>
+            <aizulove.com.fxxt.view.ExpandListView
+                android:id="@+id/activie_listview"
+                android:numColumns="1"
+                android:gravity="center"
+                android:scrollbars="none"
+                android:background="#ffffff"
+                android:divider="#cdcdcd"
+                android:dividerHeight="10dp"
+                android:cacheColorHint="#000000"
+                android:stretchMode="columnWidth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#cdcdcd"></View>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

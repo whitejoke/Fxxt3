@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--头部-->
+    <include layout="@layout/activity_head" />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editshape">
+
+            <ImageView
+                android:padding="10dp"
+                android:src="@mipmap/dlzc_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/botttom_description"/>
+
+            <TextView
+                android:gravity="center_vertical"
+                android:text="852610094@qq.com"
+                android:id="@+id/tv_user_email"
+                android:background="@null"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/et_yanzheng"
+            android:background="@drawable/editshape"
+            android:hint="请输入验证码"
+            android:padding="12dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editshape">
+
+            <ImageView
+                android:padding="10dp"
+                android:src="@mipmap/login_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/botttom_description"/>
+
+            <EditText
+                android:id="@+id/et_user_pw"
+                android:hint="请输入新密码"
+                android:background="@null"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_change"
+            android:text="修改密码"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape" />
+
+    </LinearLayout>
+</LinearLayout>

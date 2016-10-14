@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:fitsSystemWindows="true"
+        android:layout_height="40dp"
+        android:background="#13b7f6"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/i_left"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:layout_gravity="center"
+            android:contentDescription="@string/blak_content"
+            android:id="@+id/headblakimageView"/>
+
+        <EditText
+
+            android:id="@+id/et_choose"
+            android:lines="1"
+            android:hint="搜索"
+            android:imeOptions="actionSearch"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:textColor="#FFFFFF"
+            android:layout_height="25dp"
+            android:drawablePadding="10dp"
+            android:textColorHint="#FFFFFF"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@mipmap/index_search"
+            android:background="@drawable/headsearchshape" />
+
+    <!--<TextView-->
+        <!--android:text="蓝车世界"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textSize="18sp"-->
+        <!--android:textColor="#FFFFFF"-->
+        <!--android:textIsSelectable="false"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentTop="false"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:singleLine="true" />-->
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/i_right"
+        android:padding="10dp"
+        android:scaleType="center"
+        android:layout_gravity="center"
+        android:contentDescription="@string/blak_content"
+        android:id="@+id/headrightimageView" />
+
+
+</LinearLayout>

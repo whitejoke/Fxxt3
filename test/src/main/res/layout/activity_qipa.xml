@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <TextView
+        android:text="新闻新闻新闻新闻新闻新闻新闻新闻新闻"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title" />
+
+    <TextView
+        android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+        android:textSize="13sp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="2dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description" />
+
+    <TextView
+        android:text="2015-05-25"
+        android:gravity="right"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/crdate" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/img" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="10dp"
+            android:src="@mipmap/ic_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/botttom_description"/>
+
+        <TextView
+            android:text="浏览量："
+            android:textColor="#000000"
+            android:gravity="left|center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="20150525"
+            android:gravity="left|center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/visit" />
+
+    </LinearLayout>
+
+</LinearLayout>

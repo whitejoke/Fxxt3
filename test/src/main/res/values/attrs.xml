@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="indicatorColor" format="color"/>
+    <attr name="dividerColor" format="color"/>
+    <attr name="bottomLineColor" format="color"/>
+    <attr name="dividerMargin" format="dimension"/>
+    <attr name="indicatorHeight" format="dimension"/>
+    <attr name="bottomLineHeight" format="dimension"/>
+    <attr name="dividerWidth" format="dimension"/>
+    <attr name="dividermatch" format="boolean"/>
+    <declare-styleable name="SlidingTabLayout">
+        <attr name="indicatorColor"/>
+        <attr name="dividerColor"/>
+        <attr name="bottomLineColor"/>
+        <attr name="dividerMargin"/>
+        <attr name="indicatorHeight"/>
+        <attr name="bottomLineHeight"/>
+        <attr name="dividerWidth"/>
+        <attr name="dividermatch"/>
+    </declare-styleable>
+    <declare-styleable name="roundedimageview">
+        4         <attr name="border_thickness" format="dimension" />
+        5         <attr name="border_inside_color" format="color" />
+        6         <attr name="border_outside_color" format="color"></attr>
+        7     </declare-styleable>
+</resources>

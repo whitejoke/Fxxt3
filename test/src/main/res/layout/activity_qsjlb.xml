@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:overlay="false"
+        app:wave_show="true"
+        app:wave_color="@color/material_green"
+        app:wave_height_type="normal">
+    <ScrollView
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#cdcdcd"></View>
+            <aizulove.com.fxxt.view.GridListView
+                android:id="@+id/qsjllistview"
+                android:numColumns="1"
+                android:gravity="center"
+                android:scrollbars="none"
+                android:focusable="true"
+                android:background="#cdcdcd"
+                android:horizontalSpacing="0dp"
+                android:verticalSpacing="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:cacheColorHint="#000000"
+                android:stretchMode="columnWidth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#cdcdcd"></View>
+        </LinearLayout>
+
+
+    </ScrollView>
+    </com.cjj.MaterialRefreshLayout>
+</RelativeLayout>

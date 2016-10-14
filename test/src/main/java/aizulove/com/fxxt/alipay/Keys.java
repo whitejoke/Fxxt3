@@ -1,0 +1,14 @@
+package aizulove.com.fxxt.alipay;
+
+/**
+ * Created by Administrator on 2016/5/21.
+ */
+public class Keys {
+    public static final String DEFAULT_PARTNER = "2088121898529513";
+
+    public static final String DEFAULT_SELLER = "zyp@nbhissen.com";
+
+    public static final String PRIVATE = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALAXSjm/znSsz7gGkQ1qQX/m8aTISUfyOIM0ClrsZ96Mrt0WR1Gf+dVACd9pa5jLko5RMewlffDocotQPYzPbJikLOcj2kYKldLqcjBcZAOGwUU9Q5WzWwuwbAsuvDNLcZD3bezQajvYfPxRFbgR4zHjhOlbNamAc41w7oT1T64lAgMBAAECgYBAJDulTXimh0wifEHZ4Rp6vGTI4SvQSSrMn+gltncfWZ9YaQURdnRKeUkfWAcZYQ3BSVIl8oItfn46wL+qyuODG1MMeSuJ1LA+go67dKCOR65f12MoxCPQaBSMiIzIFHl9iXlvrBCtmxhaHi4LI37suImFOTlQRZOCWg4h3MTPAQJBAOGtcAyCWZwAkIZhncURPJ/y2qTberEd/+h3KIA8D6y3nA8Z1OxXKpAOpunUVnaiyD46auStqHrL/UKposB8QrsCQQDHwD1PBYg5zKVdDzilb5JPKfXbonEQhDQllktgrJJyyNzasuFE18ShlvFNFmLKgBEzdyEX1XUF9Qh8VWY1GPSfAkA87fSYjADhi415mpVcBWFW1dyOMeuYMj9LZhB7PrwEp7Xspc7E2GvXZP1PmFKXyS9DDcaaYwBf1v9TpjUYvvPNAkBjuX8iR4HGUXwxZJsERRqHeUxsdcH62/Xo2gsR3bZTpiJU8T90DkD155TaxpVVwfBUgGI+Mux0p+uvnzcixS3DAkEAqLS8DG9YiLWfve5NM9VoA52DT0L0eh0thKz5U2tCUO68CIheTa79WuwTP/ddnasmAaT+47d2YKrfvXbSenUAiw==";
+
+    public static final String PUBLIC = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB";
+}

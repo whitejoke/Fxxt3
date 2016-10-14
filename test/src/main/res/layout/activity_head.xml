@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#13b7f6">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/black_button3x"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:contentDescription="@string/blak_content"
+            android:id="@+id/blakimageView"
+            android:visibility="gone" />
+
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/head_title"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:textIsSelectable="false"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="false"
+        android:layout_centerInParent="true"
+        android:singleLine="true" />
+    <!--<EditText-->
+        <!--android:hint="搜索"-->
+        <!--android:lines="1"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:textSize="13sp"-->
+        <!--android:singleLine="true"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:drawablePadding="10dp"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:drawableLeft="@mipmap/jl_search"-->
+        <!--android:background="@drawable/searchshape"-->
+        <!--android:id="@+id/search"-->
+        <!--android:visibility="gone"/>-->
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/black_button3x"
+        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        android:contentDescription="@string/blak_content"
+        android:id="@+id/rightimageView"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/righttextView"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="保存"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:visibility="gone"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/wxgz"
+        android:padding="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/blak_content"
+        android:id="@+id/erweimaimageView"
+        android:layout_alignParentRight="true"
+         android:visibility="gone"/>
+
+
+</RelativeLayout>

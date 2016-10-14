@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="aizulove.com.fxxt"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <!--蓝牙权限  -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name">
+        <activity
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".activity.WelcomeActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+
+        <!--首页-->
+       <activity
+           android:screenOrientation="portrait"
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- 底部弹窗-->
+
+        <activity
+            android:name=".activity.SelectProductPopupWindow"
+            android:theme="@style/MyDialogStyleBottom"/>
+
+        <!--活动详情-->
+
+        <!--登录和注册-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.HostActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--登录-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--注册-->
+        <activity android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.RewritePasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <!--活动列表-->
+      <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.ActiveHostActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--奇葩详情-->
+
+        <!--奇葩列表-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.QipaHostActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <!--My页-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--积分-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.JifenActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--分销-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.DistributionHostActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--优惠-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.YouhuiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--个人中心-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.UserCenterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--我的消息-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MymessageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--俱乐部-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.JulebuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--分类-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.CategroyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--促销-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.CuxiaoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--搜索 -->
+        <activity android:name=".activity.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <!--发布发现-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.FindActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--奇葩详情-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.QbxqActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--活动详情-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.ActivieDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--交易详情-->
+        <activity android:name=".activity.TransactionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".activity.AddPlaceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <!--发现详情-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.FindDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--我的关注-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MyguanzuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--俱乐部详情-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.JulbdetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--充值-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.ChongZhiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--提现-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.TiXianActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--热门-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.HotActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--订单-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MyOderActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--购物车-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MyCartActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--用户中心-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.UpdateMemberActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--我的积分-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MyJifenActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--在线帮助-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.HelpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--设置-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MySettingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--忘记密码-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.ForgotActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--我的消息-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.MyMessgActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--我的地址-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.AddressActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--地址管理-->
+        <activity android:name=".activity.AddressManageActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <!--商品详情-->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.ProductActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+
+            android:name=".activity.ChangePwActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
+
+
+
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <!--
+            	AuthorizeAdapter表示一个继承自cn.sharesdk.framework.authorize.AuthorizeAdapter
+            	的类，这个类可以监听到页面的生命周期，也可以获取授权页面的各种UI控件。
+            	开发者可以通过继承AuthorizeAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            -->
+            <meta-data android:name="AuthorizeAdapter" android:value="cn.sharesdk.demo.MyAdapter" />
+            <!--<intent-filter>-->
+                <!--<data android:scheme="db-7janx53ilz11gbs" />-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
+                <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+            <intent-filter>
+                <data android:scheme="tencent1105555119" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--&lt;!&ndash; 微信分享回调 &ndash;&gt;-->
+        <!--<activity-->
+            <!--android:name="cn.sharesdk.share.demo.wxapi.WXEntryActivity"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:exported="true"-->
+            <!--android:screenOrientation="portrait"/>-->
+        <!-- 微信分享回调 -->
+        <!--微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+    </application>
+
+</manifest>

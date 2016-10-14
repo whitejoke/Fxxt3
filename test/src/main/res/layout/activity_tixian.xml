@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#cdcdcd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--头部-->
+    <include layout="@layout/activity_head" />
+
+    <TextView
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="账号余额:￥10.0"
+        android:textColor="#cdcdcd"
+        android:textSize="16sp"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/jr" />
+
+    <EditText
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:textColor="#cdcdcd"
+        android:background="#FFFFFF"
+        android:hint="请输入支付宝账号"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:id="@+id/trade" />
+
+    <EditText
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:textColor="#cdcdcd"
+        android:background="#FFFFFF"
+        android:hint="请输入真实姓名"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:id="@+id/truename" />
+
+    <EditText
+        android:inputType="number"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:textColor="#cdcdcd"
+        android:background="#FFFFFF"
+        android:hint="请输入提现数值"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:id="@+id/amont" />
+
+    <TextView
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:textColor="#f50d0d"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:text="提现申请可能需要几个工作日,请耐心等待."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="click"
+        android:text="申请提现"
+        android:layout_margin="5dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/button_shape"
+        android:id="@+id/submit" />
+
+    <View
+        android:background="#cdcdcd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></View>
+
+</LinearLayout>
