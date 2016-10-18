@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:layout_width="match_parent"
+    android:background="#cdcdcd"
     android:layout_height="match_parent">
 
     <ScrollView
@@ -15,7 +16,7 @@
         android:numColumns="2"
         android:gravity="center"
         android:scrollbars="none"
-        android:background="#fff"
+        android:background="#cdcdcd"
         android:horizontalSpacing="5dp"
         android:verticalSpacing="5dp"
         android:layout_margin="10dp"

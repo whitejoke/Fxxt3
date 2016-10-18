@@ -2,6 +2,7 @@ package aizulove.com.fxxt.task;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.GridView;
 
 import java.util.List;
@@ -44,6 +45,7 @@ public class CategoryDataTask extends AsyncTask<Void,Void,List<Product>>{
             if (judgeInternet) {
                 String url = VariablesOfUrl.APP_BASE_URL +this.url;// VariablesOfUrl.GETLOGOLIST;
                 StringBuilder jsonStr = NetWork.postStringFromUrl(url, map);
+                Log.i("susu", String.valueOf(jsonStr));
                 if (jsonStr.toString().equals("[]")) {
                     typeFlag = false;
                 }

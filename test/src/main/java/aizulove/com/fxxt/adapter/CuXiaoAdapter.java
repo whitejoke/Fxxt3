@@ -82,7 +82,7 @@ public class CuXiaoAdapter extends BaseAdapter {
         String[] temp=isGuanzhu.split(",");
         for (int i=0;i<temp.length;i++){
             if (temp[i].equals(list.get(position).getItemid().toString())){
-                holder.guanzhu.setText("取消关注");
+                holder.guanzhu.setText("已关注");
             }
         }
         holder.cuxiaoTitle.setText(list.get(position).getTitle());

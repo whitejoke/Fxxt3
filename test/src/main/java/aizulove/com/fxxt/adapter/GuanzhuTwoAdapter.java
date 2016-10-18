@@ -1,6 +1,7 @@
 package aizulove.com.fxxt.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ import aizulove.com.fxxt.utils.ImageLoadOptions;
 /**
  * Created by Administrator on 2016/4/29.
  */
-public class ProductAdapter extends BaseAdapter  {
+public class GuanzhuTwoAdapter extends BaseAdapter  {
     private Context context;
     private List<Product> list;
     private LayoutInflater mInflater;
@@ -32,7 +33,7 @@ public class ProductAdapter extends BaseAdapter  {
     public interface Callback {
         public void click(View v,int position,View view);
     }
-    public ProductAdapter(Context context, List<Product> list,String isGuanzhu,Callback callback){
+    public GuanzhuTwoAdapter(Context context, List<Product> list,String isGuanzhu,Callback callback){
         this.context = context;
         ImageLoadOptions.initImageLoader(context);
         ImageLoadOptions.getOptions();
@@ -80,10 +81,13 @@ public class ProductAdapter extends BaseAdapter  {
         layoutview=convertView;
         String[] temp=isGuanzhu.split(",");
         for (int i=0;i<temp.length;i++){
+            Log.i("susu", temp[i]);
             if (temp[i].equals(list.get(postion).getItemid().toString())){
-                holder.guanzhu.setText("已关注");
+                holder.guanzhu.setText("取消关注");
             }
         }
+        //Log.i("susu",isGuanzhu+"bbb");
+        //Log.i("susu", String.valueOf(list.get(postion).getItemid())+"aaa");
         //Log.i("susu", String.valueOf(list.get(postion).getItemid()));
         holder.title.setText(list.get(postion).getTitle());
         holder.price.setText("￥"+list.get(postion).getPrice());
@@ -92,41 +96,6 @@ public class ProductAdapter extends BaseAdapter  {
             //ImageLoader.getInstance().displayImage(list.get(postion).getThumb(), holder.img, options, null);
         }
         return convertView;
-    }
-    /**
-     * mLists集合的get方法  通过他可以取得数据的size();
-     * @return
-     */
-    public List<Product> getLists() {
-        return list;
-    }
-
-    /**
-     * 对以下方法的复用
-     * @param lists
-     */
-    public void addLists(List<Product> lists) {
-        addLists(0, lists);
-    }
-
-
-    /**
-     * 添加数据
-     * @param position  添加的位置
-     * @param lists   添加的数据
-     */
-    public void addLists(int position, List<Product> lists) {
-        //mLists = lists;
-        if (lists != null && lists.size() > 0) {
-            list.addAll(lists);
-            /**
-             * Notify any registered observers that the <code>itemCount</code> items starting at
-             * position <code>positionStart</code> have changed.
-             *
-             * 通知item是从哪个地方到哪个地方已经改变了
-             */
-
-        }
     }
 
     public class ViewHolder{

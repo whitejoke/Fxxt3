@@ -26,7 +26,7 @@ import aizulove.com.fxxt.activity.BaseActivity;
 import aizulove.com.fxxt.activity.JulbdetailActivity;
 import aizulove.com.fxxt.activity.ProductActivity;
 import aizulove.com.fxxt.adapter.GuanzhuAdapter;
-import aizulove.com.fxxt.adapter.ProductAdapter;
+import aizulove.com.fxxt.adapter.GuanzhuTwoAdapter;
 import aizulove.com.fxxt.modle.entity.Logo;
 import aizulove.com.fxxt.modle.entity.Product;
 import aizulove.com.fxxt.task.CancelHotAttention;
@@ -38,13 +38,13 @@ import aizulove.com.fxxt.view.GridListView;
 /**
  * Created by moon.zhong on 2015/3/9.
  */
-public class GuanzhuFragment extends Fragment implements  AdapterView.OnItemClickListener,ProductAdapter.Callback {
+public class GuanzhuFragment extends Fragment implements  AdapterView.OnItemClickListener,GuanzhuTwoAdapter.Callback {
 
     private String urlString = VariablesOfUrl.GETHOTATTENTIONLIST;
     private String url=VariablesOfUrl.GETATTENTIONLIST;
     private GridListView listView;
     private GuanzhuAdapter adapter;
-    private ProductAdapter pAdapter;
+    private GuanzhuTwoAdapter pAdapter;
     private  View view;
     private List<Logo> listMessage = new ArrayList<Logo>();
     private List<Product> list=new ArrayList<>();
@@ -108,8 +108,8 @@ public class GuanzhuFragment extends Fragment implements  AdapterView.OnItemClic
             map.put("userId", String.valueOf(id));
             new GuanzhuDataTask(getContext(),listMessage,map,adapter,listView,url).execute();
         }else {
-            Log.i("susu",type);
-            pAdapter=new ProductAdapter(getContext(),list,sharedPreferences.getString("attentionids",""),this);
+            Log.i("susu",sharedPreferences.getString("attentionids",""));
+            pAdapter=new GuanzhuTwoAdapter(getContext(),list,sharedPreferences.getString("attentionids",""),this);
             listView.setAdapter(pAdapter);
             Map<String, String> map = new HashMap<String, String>();
             map.put("userId", String.valueOf(id));

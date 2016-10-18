@@ -8,7 +8,7 @@
 
     <include layout="@layout/activity_head" />
     <LinearLayout
-        android:background="#FFFFFF"
+        android:background="#fff"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,7 +17,6 @@
             android:id="@+id/id_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             zgy:bottomLineColor="#FFFFFF"
             zgy:dividerMargin="15dp"
             zgy:indicatorColor="#13b7f6"

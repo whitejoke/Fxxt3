@@ -5,24 +5,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import aizulove.com.fxxt.R;
-import aizulove.com.fxxt.adapter.GuanzhuAdapter;
 import aizulove.com.fxxt.adapter.ViewPagerAdapter;
-import aizulove.com.fxxt.modle.entity.Logo;
 import aizulove.com.fxxt.modle.page.GuanzhuPage;
-import aizulove.com.fxxt.utils.VariablesOfUrl;
-import aizulove.com.fxxt.view.GridListView;
 import aizulove.com.fxxt.view.SlidingTabLayout;
 
 public class MyguanzuActivity extends BaseActivity  implements SlidingTabLayout.AddListener {
-
-    private String urlString = VariablesOfUrl.APP_BASE_URL + VariablesOfUrl.GETATTENTIONLIST;
-    private GridListView listView;
-    private GuanzhuAdapter adapter;
-    private List<Logo> listMessage = new ArrayList<Logo>();
     public void setContentViews(){
         View convertView = mInflater.inflate(R.layout.activity_cuxiao, null);
         layoutContent.addView(convertView);

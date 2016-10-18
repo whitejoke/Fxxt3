@@ -185,10 +185,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     }
                 }
                 String test=ListToString(temp);
-                Log.i("susu",test);
-                Log.i("susu", String.valueOf(temp));
                 if (count==0){
-                    guanzhu.setText("取消关注");
+                    guanzhu.setText("已关注");
                     temp.add(listMessage.get(position).getItemid().toString());
                     String attentionids=ListToString(temp);
                     Map<String,String> map=new HashMap<String, String>();

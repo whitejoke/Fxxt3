@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.List;
 import java.util.Map;
 
-import aizulove.com.fxxt.adapter.ProductAdapter;
+import aizulove.com.fxxt.adapter.GuanzhuTwoAdapter;
 import aizulove.com.fxxt.modle.entity.Product;
 import aizulove.com.fxxt.utils.JsonParserFactory;
 import aizulove.com.fxxt.utils.NetWork;
@@ -22,10 +22,10 @@ public class GuanzhuProductTask extends AsyncTask<Void,Void,List<Product>> {
     private boolean judgeInternet;
     private boolean typeFlag=true;
     private List<Product> listMessage;
-    private ProductAdapter adapter;
+    private GuanzhuTwoAdapter adapter;
     private Map<String, String> map;
     private String Url;
-    public GuanzhuProductTask(Context context, Map<String, String> map, List<Product> listMessage, ProductAdapter adapter,String url){
+    public GuanzhuProductTask(Context context, Map<String, String> map, List<Product> listMessage, GuanzhuTwoAdapter adapter,String url){
         super();
         this.context=context;
         this.listMessage=listMessage;
