@@ -28,7 +28,16 @@ public class Logo implements Serializable {
 	private Date createTime;//发表时间
 	
 	private List<Post> postList;//
-	
+	private int count;
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	public Integer getId() {
 		return id;
 	}

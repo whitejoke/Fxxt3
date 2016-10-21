@@ -32,7 +32,17 @@ public class Post implements Serializable {
 	private List<Comment> commentList;//包含的评论
 
 	private int size;
-	
+
+	private int count;
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	private Date creatTime;//发表时间
 	public Integer getId() {
 		return id;

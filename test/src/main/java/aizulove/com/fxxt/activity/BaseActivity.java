@@ -321,9 +321,9 @@ public class BaseActivity extends FragmentActivity {
         editor.putString("sound", result.getSound()+"");
         editor.putString("career", result.getCareer() == null ||result.getCareer().equals("null")? "" :result.getCareer()+"");
         editor.putString("areaId", result.getAreaid()+"");
-
+        editor.putString("city",result.getCity() == null || result.getCity().equals("null") ? "":result.getCity()+"");
+        editor.putString("province",result.getProvince()==null||result.getProvince().equals("null")?"":result.getProvince()+"");
         editor.putString("logintimes",result.getLogintimes()+"");
-
         editor.putString("attentionids",result.getAttentionids()+"");
         editor.commit();
     }
@@ -344,6 +344,9 @@ public class BaseActivity extends FragmentActivity {
 
         result.setGender(Integer.parseInt(sharedPreferences.getString("gender","0")));
         result.setAreaid(Integer.parseInt(sharedPreferences.getString("areaid","0")));
+
+        result.setArrchildid(sharedPreferences.getString("arrchildid",""));
+
         result.setTruename(sharedPreferences.getString("truename", ""));
         result.setSkype(sharedPreferences.getString("skype", ""));
         result.setQq(sharedPreferences.getString("qq", ""));
@@ -352,6 +355,8 @@ public class BaseActivity extends FragmentActivity {
         result.setSound(Integer.parseInt(sharedPreferences.getString("sound", "0")));
         result.setCareer(sharedPreferences.getString("career", ""));
         result.setAreaid(Integer.parseInt(sharedPreferences.getString("areaId", "0")));
+        result.setProvince(sharedPreferences.getString("province",""));
+        result.setCity(sharedPreferences.getString("city", ""));
         result.setMoney(Float.parseFloat(sharedPreferences.getString("money", "0.0")));
         result.setLogintimes(Integer.parseInt(sharedPreferences.getString("logintimes", "0")));
         result.setAttentionids(sharedPreferences.getString("attentionids",""));

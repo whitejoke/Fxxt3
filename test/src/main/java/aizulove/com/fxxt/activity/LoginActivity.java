@@ -245,7 +245,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                         typeFlag = false;
                     }
                     result = JsonParserFactory.jsonParserMember(jsonStr.toString());
-                    Log.i("susu", result.getReferralCode());
                 }
             } catch (Exception e) {
                 result = null;

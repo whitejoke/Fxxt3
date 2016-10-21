@@ -2,6 +2,7 @@ package aizulove.com.fxxt.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,9 +13,14 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import aizulove.com.fxxt.R;
 import aizulove.com.fxxt.modle.entity.Member;
 import aizulove.com.fxxt.utils.ImageLoadOptions;
+import aizulove.com.fxxt.utils.JsonParserFactory;
+import aizulove.com.fxxt.utils.NetWork;
 import aizulove.com.fxxt.utils.VariablesOfUrl;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import cn.sharesdk.onekeyshare.OnekeyShareTheme;
@@ -69,6 +75,51 @@ public class MyActivity extends BaseActivity{
         }else{
             Log.i("susu",member.getAvatarUrl());
             avatarurl.setImageResource(R.mipmap.ic_user);
+        }
+        Map<String,String> map=new HashMap<String,String>();
+        map.put("userId",getMemberSharedPreference().getUserid()+"");
+        new  MemberUpdateTask(context,map).execute();
+    }
+    class MemberUpdateTask extends AsyncTask<Void, Void, Member> {
+        private Context context;
+        private boolean judgeInternet;
+        private boolean typeFlag=true;
+        private Map<String, String> map;
+        public MemberUpdateTask(Context context,Map<String, String> map){
+            super();
+            this.map=map;
+            this.context=context;
+        }
+
+        @Override
+        protected aizulove.com.fxxt.modle.entity.Member doInBackground(Void... params) {
+            aizulove.com.fxxt.modle.entity.Member result = null;
+            judgeInternet = NetWork.checkNetWorkStatus(context);
+            try {
+                if (judgeInternet) {
+                    String url = VariablesOfUrl.APP_BASE_URL + VariablesOfUrl.GETMEMBERBYID;
+                    StringBuilder jsonStr = NetWork.postStringFromUrl(url, map);
+                    if (jsonStr.toString().equals("[]")) {
+                        typeFlag = false;
+                    }
+                    result = JsonParserFactory.getMemberById(jsonStr.toString());
+                }
+            } catch (Exception e) {
+                result = null;
+            }
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(aizulove.com.fxxt.modle.entity.Member result) {
+            super.onPostExecute(result);
+            if (judgeInternet) {
+                if (typeFlag) {// 返回有数据
+                    if (result != null) {
+                        setMemberSharedPreference(result);
+                    }
+                }
+            }
         }
     }
 

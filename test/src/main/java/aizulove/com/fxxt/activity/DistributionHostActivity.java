@@ -12,7 +12,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,7 +35,6 @@ import aizulove.com.fxxt.utils.JsonParserFactory;
 import aizulove.com.fxxt.utils.NetWork;
 import aizulove.com.fxxt.utils.VariablesOfUrl;
 import aizulove.com.fxxt.view.SlidingTabLayout;
-import aizulove.com.fxxt.view.ToastSingle;
 
 public class DistributionHostActivity extends BaseActivity implements View.OnClickListener{
 
@@ -239,7 +237,7 @@ public class DistributionHostActivity extends BaseActivity implements View.OnCli
 					if (jsonStr.toString().equals("[]")) {
 						typeFlag = false;
 					}
-					result = JsonParserFactory.jsonParserMember(jsonStr.toString());
+					result = JsonParserFactory.getMemberById(jsonStr.toString());
 					}
 			} catch (Exception e) {
 				result = null;
@@ -278,13 +276,13 @@ public class DistributionHostActivity extends BaseActivity implements View.OnCli
 				break;
 			}
 		}
-		if (resultCode==RESULT_OK){
-			Bundle bundle=data.getExtras();
-			String result= bundle.getString("result");
-			ToastSingle.showToast(context, result);
-		} if(resultCode == RESULT_CANCELED) {
-			ToastSingle.showToast(context,"扫描出错！");
-		}
+//		if (resultCode==RESULT_OK){
+//			Bundle bundle=data.getExtras();
+//			String result= bundle.getString("result");
+//			ToastSingle.showToast(context, result);
+//		} if(resultCode == RESULT_CANCELED) {
+//			ToastSingle.showToast(context,"扫描出错！");
+//		}
 	}
 	private void refresh() {
 		finish();

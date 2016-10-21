@@ -51,25 +51,10 @@ public class MyguanzuActivity extends BaseActivity  implements SlidingTabLayout.
         mViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), mTab));
         mTabLayout.setViewPager(mViewPager);
         mTabLayout.setOnAddListener(this);
-//        adapter=new GuanzhuAdapter(context,listMessage);
-//        listView.setAdapter(adapter);
-//        Map<String, String> map = new HashMap<String, String>();
-//        map.put("userId", String.valueOf(getMemberSharedPreference().getUserid()));
-//        new GuanzhuDataTask(context,listMessage,map,adapter,listView,urlString).execute();
-//        listView.setOnMyGridViewRefreshListener(this);
     }
 
 
 
-//    @Override
-//    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        Intent intent= new Intent();
-//        intent.setClass(context,JulbdetailActivity.class);
-//        Bundle bundle = new Bundle();
-//        bundle.putSerializable("logo",(Serializable) listMessage.get(position));
-//        intent.putExtras(bundle);
-//        startActivity(intent);
-//    }
 
 
     @Override

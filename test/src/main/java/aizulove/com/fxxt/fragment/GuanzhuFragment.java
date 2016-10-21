@@ -70,6 +70,7 @@ public class GuanzhuFragment extends Fragment implements  AdapterView.OnItemClic
         sharedPreferences=getActivity().getSharedPreferences("member", Context.MODE_WORLD_READABLE);
         //sharedPreferences=getActivity().getSharedPreferences("member", Context.MODE_WORLD_READABLE);
         String test=sharedPreferences.getString("attentionids","");
+
         String[] p=test.split(",");
         for (int i=0;i<p.length;i++){
             temp.add(p[i]);
@@ -108,7 +109,6 @@ public class GuanzhuFragment extends Fragment implements  AdapterView.OnItemClic
             map.put("userId", String.valueOf(id));
             new GuanzhuDataTask(getContext(),listMessage,map,adapter,listView,url).execute();
         }else {
-            Log.i("susu",sharedPreferences.getString("attentionids",""));
             pAdapter=new GuanzhuTwoAdapter(getContext(),list,sharedPreferences.getString("attentionids",""),this);
             listView.setAdapter(pAdapter);
             Map<String, String> map = new HashMap<String, String>();

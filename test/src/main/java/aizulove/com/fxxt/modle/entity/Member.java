@@ -138,6 +138,8 @@ public class Member implements Serializable {
 	
 
 	private String city;//城市
+
+
 	
 	/*@Column(name = "address")
 	private String address;//收货地址
@@ -181,6 +183,16 @@ public class Member implements Serializable {
 	private String code;
 
 	private String attentionids;
+
+	private String arrchildid;
+
+	public String getArrchildid() {
+		return arrchildid;
+	}
+
+	public void setArrchildid(String arrchildid) {
+		this.arrchildid = arrchildid;
+	}
 
 	public String getAttentionids() {
 		return attentionids;

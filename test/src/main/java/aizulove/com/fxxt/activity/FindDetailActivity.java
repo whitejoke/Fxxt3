@@ -222,7 +222,7 @@ public class FindDetailActivity extends BaseActivity implements View.OnClickList
                         content.setText(result.getContent());
                         String[] imgs = result.getImg().split(",");
                         creatTime.setText(dateFormat.format(result.getCreatTime()));
-                        logozts.setText(String.valueOf(result.getVisit() == null ? 0 : result.getVisit()));
+                        logozts.setText(String.valueOf(result.getCount() == 0 ? 0 : result.getCount()));
                         logodianz.setText(String.valueOf(result.getZan()));
                         if (null != result.getMember().getAvatarUrl() && "http".contains(result.getMember().getAvatarUrl())) {
                             Picasso.with(context).load(post.getMember().getAvatarUrl()).into(avatarUrl);

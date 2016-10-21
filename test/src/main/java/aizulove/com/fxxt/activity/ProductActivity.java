@@ -340,19 +340,19 @@ public class ProductActivity extends BaseActivity {
     private void AddToOrder(Product result) {
         int s1 = 0,s2=0,s3=0;
         for (int i=0;i<temp.length;i++){
-            if (temp.equals(v1String)){
+            if (temp[i].equals(v1String)){
                 s1=i;
                 break;
             }
         }
         for (int i=0;i<temp2.length;i++){
-            if (temp2.equals(v2String)){
+            if (temp2[i].equals(v2String)){
                 s2=i;
                 break;
             }
         }
         for (int i=0;i<temp3.length;i++){
-            if (temp3.equals(v3String)){
+            if (temp3[i].equals(v3String)){
                 s3=i;
                 break;
             }
@@ -361,8 +361,8 @@ public class ProductActivity extends BaseActivity {
         map.put("userId", String.valueOf(getMemberSharedPreference().getUserid()));
         map.put("mallId", String.valueOf(result.getItemid()));
         map.put("v1", String.valueOf(s1));
-        map.put("v2",String.valueOf(s2));
-        map.put("v3",String.valueOf(s3));
+        map.put("v2", String.valueOf(s2));
+        map.put("v3", String.valueOf(s3));
         map.put("i", String.valueOf(pop_count));
         new EditAddressTask(getApplicationContext(),map,url).execute();
     }

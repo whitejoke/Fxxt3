@@ -139,6 +139,7 @@ public class JsonParserFactory {
             message.setId(jo.getInt("id"));
             message.setTitle(jo.getString("title"));
             message.setContent(jo.getString("content"));
+            message.setCount(jo.getInt("count"));
             message.setImg(jo.getString("img"));
             message.setSource(jo.getString("source"));
             JSONObject oj= jo.getJSONObject("member");
@@ -208,6 +209,7 @@ public class JsonParserFactory {
                 JSONObject jo1 = ja1.getJSONObject(j);
                 Post post=new Post();
                 post.setId(jo1.getInt("id"));
+                post.setCount(jo1.getInt("count"));
                 post.setSource(jo1.getString("source"));
                 post.setTitle(jo1.getString("title"));
                 post.setContent(jo1.getString("content"));
@@ -238,9 +240,10 @@ public class JsonParserFactory {
      */
     public static Post getPostById(String jsonStr)throws Exception {
         JSONObject object = new JSONObject(jsonStr);
-        JSONObject ja = object.getJSONObject("info");
-
+        JSONObject object1 = object.getJSONObject("info");
+        JSONObject ja=object1.getJSONObject("post");
         Post post=new Post();
+        post.setCount(object1.getInt("count"));
         post.setId(ja.getInt("id"));
         post.setSource(ja.getString("source"));
         post.setTitle(ja.getString("title"));
@@ -614,6 +617,7 @@ public class JsonParserFactory {
             member.setCredit(jo.getInt("credit"));
             member.setEmail(jo.getString("email"));
             member.setAvatarUrl(jo.getString("avatarUrl"));
+            member.setGender(jo.getInt("gender"));
 
             member.setLevel(jo.getString("level"));
             member.setReferralCode(jo.getString("referralCodeSelf"));
@@ -626,6 +630,47 @@ public class JsonParserFactory {
             member.setDepartment(jo.getString("department"));
             member.setSound(jo.getInt("sound"));
             member.setCareer(jo.getString("career"));
+            member.setCity(jo.getString("city"));
+            member.setProvince(jo.getString("province"));
+            member.setAreaid(jo.getInt("areaid"));
+
+            member.setLogintimes(jo.getInt("logintimes"));
+            member.setMoney(Float.parseFloat(jo.getString("money")));
+
+            member.setAttentionids(jo.getString("attentionids"));
+            return member;
+        }
+        return null;
+    }
+
+    public static Member getMemberById(String jsonStr)throws JSONException {
+        JSONObject object = new JSONObject(jsonStr);
+        if (object.getString("code").equals("1000")) {
+            Member member=new Member();
+            JSONObject jo=object.getJSONObject("info");
+            member.setUserid(jo.getInt("userid"));
+            member.setUsername(jo.getString("username"));
+            member.setPassword(jo.getString("password"));
+            member.setToken(jo.getString("token"));
+            member.setMobile(jo.getString("mobile"));
+            member.setCredit(jo.getInt("credit"));
+            member.setEmail(jo.getString("email"));
+            member.setAvatarUrl(jo.getString("avatarUrl"));
+            member.setGender(jo.getInt("gender"));
+
+            member.setLevel(jo.getString("level"));
+            member.setReferralCode(jo.getString("referralCodeSelf"));
+
+
+            member.setTruename(jo.getString("truename"));
+            member.setSkype(jo.getString("skype"));
+            member.setQq(jo.getString("qq"));
+            member.setAli(jo.getString("ali"));
+            member.setDepartment(jo.getString("department"));
+            member.setSound(jo.getInt("sound"));
+            member.setCareer(jo.getString("career"));
+            member.setCity(jo.getString("city"));
+            member.setProvince(jo.getString("province"));
             member.setAreaid(jo.getInt("areaid"));
 
             member.setLogintimes(jo.getInt("logintimes"));

@@ -43,13 +43,11 @@ public class CouponDataTask extends AsyncTask<Void, Void, List<Coupon>> {
         try {
             if (judgeInternet) {
                 String url = VariablesOfUrl.APP_BASE_URL + VariablesOfUrl.GETMYCOUPONLIST;
-                System.out.println("url=="+url);
                 StringBuilder jsonStr = NetWork.postStringFromUrl(url, map);
                 if (jsonStr.toString().equals("[]")) {
                     typeFlag = false;
                 }
                 result = JsonParserFactory.jsonParserCouponList(jsonStr.toString());
-                System.out.println(result);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -119,8 +119,8 @@
     <orderEntry type="library" exported="" name="ShareSDK-Email-2.7.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-ShortMessage-2.7.6" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.1" level="project" />
-    <orderEntry type="library" exported="" name="gson-2.7" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.7" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-24.1.0" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.1" level="project" />

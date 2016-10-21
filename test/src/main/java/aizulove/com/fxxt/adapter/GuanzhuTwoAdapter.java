@@ -1,7 +1,6 @@
 package aizulove.com.fxxt.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,24 +67,25 @@ public class GuanzhuTwoAdapter extends BaseAdapter  {
             holder.title = (TextView) convertView.findViewById(R.id.title);
             holder.price = (TextView) convertView.findViewById(R.id.price);
             holder.guanzhu= (TextView) convertView.findViewById(R.id.tv_guanzhu);
+            final View finalConvertView = convertView;
             holder.guanzhu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mCallBack.click(v,postion,layoutview);
+                    mCallBack.click(v,postion, finalConvertView);
                 }
             });
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        layoutview=convertView;
-        String[] temp=isGuanzhu.split(",");
-        for (int i=0;i<temp.length;i++){
-            Log.i("susu", temp[i]);
-            if (temp[i].equals(list.get(postion).getItemid().toString())){
-                holder.guanzhu.setText("取消关注");
-            }
-        }
+        holder.guanzhu.setText("取消关注");
+//        String[] temp=isGuanzhu.split(",");
+//        for (int i=0;i<temp.length;i++){
+//            Log.i("susu", temp[i]);
+//            if (temp[i].equals(list.get(postion).getItemid().toString())){
+//                holder.guanzhu.setText("取消关注");
+//            }
+//        }
         //Log.i("susu",isGuanzhu+"bbb");
         //Log.i("susu", String.valueOf(list.get(postion).getItemid())+"aaa");
         //Log.i("susu", String.valueOf(list.get(postion).getItemid()));

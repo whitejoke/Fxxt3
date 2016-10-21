@@ -79,7 +79,7 @@ public class JulbdetailAdapter extends BaseAdapter {
         String[] imgs = list.get(postion).getImg().split(",");
         holder.creatTime.setText(new SimpleDateFormat("yyyy-MM-dd").format(list.get(postion).getCreatTime()));
         //holder.logozts.setText(String.valueOf(list.get(postion).getCommentList() == null ? 0 : list.get(postion).getCommentList().size()));
-        holder.logozts.setText(String.valueOf(list.get(postion).getVisit()));
+        holder.logozts.setText(String.valueOf(list.get(postion).getCount()));
         holder.logodianz.setText(String.valueOf(list.get(postion).getZan()));
 
         if (null != list.get(postion).getMember().getAvatarUrl() && "http".contains(list.get(postion).getMember().getAvatarUrl())) {

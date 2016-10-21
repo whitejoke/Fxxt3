@@ -110,7 +110,7 @@ public class TransactionActivity extends BaseActivity implements View.OnClickLis
                         }
                         if (type.equals("product"))
                             new TradeNoTask(context,urlGetTrade,product).execute();
-                        Toast.makeText(TransactionActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(TransactionActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
 
                     } else {
                         // 判断resultStatus 为非"9000"则代表可能支付失败

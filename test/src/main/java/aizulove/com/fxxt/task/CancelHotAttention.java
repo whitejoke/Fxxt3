@@ -49,7 +49,7 @@ public class CancelHotAttention extends AsyncTask<Void,Void,String> {
         if (judgeInternet) {
             if (typeFlag) {// 返回有数据
                 if (!result.equals("1000")){
-                    ToastSingle.showToast(context, "失败了！");
+                    ToastSingle.showToast(context, "已经取消关注！");
                 }
             }else{
                 ToastSingle.showToast(context, "没有数据");

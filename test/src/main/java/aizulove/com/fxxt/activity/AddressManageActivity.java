@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,22 +99,9 @@ public class AddressManageActivity extends BaseActivity implements View.OnClickL
         postcode.setText(address.getPostcode());
         province.setText(address.getAreaname());
         city.setText(address.getCityname());
+        //Log.i("susu","aaaaa"+name.getText().toString()+"aaaaaaaa");
 
         Map<String,String> map=new HashMap<String, String>();
-//        final ProvinceTask task=new ProvinceTask(context,list,urlProvince,map);
-//        task.setOnDataFinishedListener(new ProvinceTask.OnDataFinishedListener() {
-//            @Override
-//            public void onDataSuccessfully(List<City> result) {
-//                for (City city:result){
-//                    PLANETS.add(city.getAreaname());
-//                }
-//            }
-//            @Override
-//            public void onDataFailed() {
-//                Toast.makeText(AddressManageActivity.this, "加载失败！", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        task.execute();
         new ProvinceTask(context,list,urlProvince,map).execute();
         for (int i=1;i<392;i++){
             Map<String,String> parse=new HashMap<>();
@@ -268,24 +256,28 @@ public class AddressManageActivity extends BaseActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.righttextView:
-                Map<String, String> map = new HashMap<String, String>();
-                map.put("addressId", String.valueOf(address.getItemid()));
-                map.put("addressInfo",place.getText().toString());
-                map.put("editor", address.getEditor());
-                map.put("listorder", String.valueOf(address.getListorder()));
-                map.put("areaId", String.valueOf(areaid));
-                map.put("mobile", getMemberSharedPreference().getMobile());
-                map.put("username", getMemberSharedPreference().getUsername());
-                map.put("userId", String.valueOf(getMemberSharedPreference().getUserid()));
-                map.put("truename", name.getText().toString());
-                map.put("note", "");
-                map.put("postcode", postcode.getText().toString());
-                map.put("telephone", phone.getText().toString());
-                map.put("cityid", String.valueOf(cityid));
-                new EditAddressTask(context,map,url).execute();
-                Intent intent= new Intent();
-                setResult(30, intent);
-                finish();
+                if (TextUtils.isEmpty(name.getText())||TextUtils.isEmpty(phone.getText())||TextUtils.isEmpty(province.getText())||TextUtils.isEmpty(city.getText())||TextUtils.isEmpty(place.getText())){
+                    ToastSingle.showToast(context,"请填写完整信息");
+                }else {
+                    Map<String, String> map = new HashMap<String, String>();
+                    map.put("addressId", String.valueOf(address.getItemid()));
+                    map.put("addressInfo",place.getText().toString());
+                    map.put("editor", address.getEditor());
+                    map.put("listorder", String.valueOf(address.getListorder()));
+                    map.put("areaId", String.valueOf(areaid));
+                    map.put("mobile", getMemberSharedPreference().getMobile());
+                    map.put("username", getMemberSharedPreference().getUsername());
+                    map.put("userId", String.valueOf(getMemberSharedPreference().getUserid()));
+                    map.put("truename", name.getText().toString());
+                    map.put("note", "");
+                    map.put("postcode", postcode.getText().toString());
+                    map.put("telephone", phone.getText().toString());
+                    map.put("cityid", String.valueOf(cityid));
+                    new EditAddressTask(context,map,url).execute();
+                    Intent intent= new Intent();
+                    setResult(30, intent);
+                    finish();
+                }
                 break;
             case R.id.et_address_province:
                 View outerView = LayoutInflater.from(context).inflate(R.layout.wheel_view, null);

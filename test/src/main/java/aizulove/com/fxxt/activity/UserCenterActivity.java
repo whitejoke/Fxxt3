@@ -27,9 +27,6 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.squareup.picasso.Picasso;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -79,6 +76,7 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
     private String picPath=null;
     int screenWidth;
     int screenHeight;
+    private int gender;
 
 
     public void setContentViews(){
@@ -88,6 +86,14 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
         WindowManager wm= (WindowManager) getSystemService(WINDOW_SERVICE);
         screenWidth= wm.getDefaultDisplay().getWidth();
         screenHeight=wm.getDefaultDisplay().getHeight();
+        areaid=getMemberSharedPreference().getAreaid();
+        if (areaid==0){
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("arrchildid","");
+        }
+        gender=getMemberSharedPreference().getGender();
+        arrchildid=getMemberSharedPreference().getArrchildid();
+        Log.i("susu", String.valueOf(arrchildid));
         //System.out.print("手机宽"+screenWidth+"手机高"+screenHeight);
         findViews();
         DataTaskTest();
@@ -104,22 +110,25 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
         et_ali.setText(getMemberSharedPreference().getAli()== null ? "":getMemberSharedPreference().getAli());
         et_department.setText(getMemberSharedPreference().getDepartment()== null ? "":getMemberSharedPreference().getDepartment());
         et_career.setText(getMemberSharedPreference().getCareer()== null ? "":getMemberSharedPreference().getCareer());
-        if (getMemberSharedPreference().getGender()!=0){
-         String[] temp={"男","女"};
-            choose_sex.setText(temp[getMemberSharedPreference().getGender() - 1]);
-        }
-        if (getMemberSharedPreference().getAreaid()!=0){
-            for (City city:list){
-                String[] array=city.getArrchildid().split(",");
-                for (int i=0;i<array.length;i++) {
-                    if (array[i].equals(getMemberSharedPreference().getAreaid())) {
-                        choose_province.setText(city.getAreaname());
-                        choose_city.setText(PLANETS_CityList.get(getMemberSharedPreference().getAreaid()-1));
-                    }
-                }
 
-            }
-        }
+        choose_province.setText(getMemberSharedPreference().getProvince().equals("") ||getMemberSharedPreference().getProvince().equals("null")? "请选择省":getMemberSharedPreference().getProvince());
+        choose_city.setText(getMemberSharedPreference().getCity().equals("")||getMemberSharedPreference().getCity().equals("null") ? "请选择市":getMemberSharedPreference().getCity());
+        String[] temp={"男","女"};
+        choose_sex.setText(getMemberSharedPreference().getGender()==0?"请选择性别":temp[getMemberSharedPreference().getGender() - 1]);
+
+//        if (getMemberSharedPreference().getAreaid()!=0){
+//            for (City city:list){
+//                String[] array=city.getArrchildid().split(",");
+//                for (int i=0;i<array.length;i++) {
+//                    if (array[i].equals(getMemberSharedPreference().getAreaid())) {
+//                        choose_province.setText(city.getAreaname());
+//                        choose_city.setText(PLANETS_CityList.get(getMemberSharedPreference().getAreaid()-1));
+//                    }
+//                }
+//
+//            }
+//        }
+
         if(null!= getMemberSharedPreference().getAvatarUrl()&&!getMemberSharedPreference().getAvatarUrl().equals("null") &&!getMemberSharedPreference().getAvatarUrl().equals("")) {
             Log.i("susu",getMemberSharedPreference().getAvatarUrl()+"---------");
             ImageLoader.getInstance().displayImage(VariablesOfUrl.imagePath+"/file/head/"+getMemberSharedPreference().getAvatarUrl(), head, options, null);
@@ -169,33 +178,6 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
                 result = null;
             }
             return result;
-        }
-        private List<City> parseXml() throws XmlPullParserException, IOException {
-            List<City> cityList=null;
-            XmlPullParser parser=getResources().getXml(R.xml.city_code);
-            int eventType=parser.getEventType();
-            while(eventType!=XmlPullParser.END_DOCUMENT){
-                switch (eventType) {
-                    case XmlPullParser.START_DOCUMENT:
-                        cityList=new ArrayList<City>();
-                        break;
-                    case XmlPullParser.START_TAG:
-                        String tagName=parser.getName();
-                        if(tagName.equals("key")){
-                            String cityName=parser.nextText();
-                            parser.next();
-                            String cityId=parser.nextText();
-                            //City cityNameList=new City(cityName, cityId);
-                            //cityList.add(cityNameList);
-                        }
-                        break;
-
-                    default:
-                        break;
-                }
-                eventType=parser.next();
-            }
-            return cityList;
         }
 
         @Override
@@ -297,7 +279,7 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
                 WheelView wv = (WheelView) outerView.findViewById(R.id.wheel_view_wv);
                 wv.setOffset(2);
                 wv.setItems(Arrays.asList(PLANETS));
-                wv.setSeletion(1);
+                wv.setSeletion(0);
                 wv.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
                     @Override
                     public void onSelected(int selectedIndex, String item) {
@@ -353,7 +335,6 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
                         @Override
                         public void onSelected(int selectedIndex, String item) {
                             areaid=Integer.parseInt(temp[selectedIndex-2]);
-                            Log.i("susu", String.valueOf(areaid));
                             choose_city.setText(item);
                         }
                     });
@@ -462,7 +443,6 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
 
     private void savePerson() {
         String sex=choose_sex.getText().toString();
-        int gender=1;
         if (sex.equals("男")){
             gender=1;
         }
@@ -471,7 +451,7 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
         }
         Map<String,String> map=new HashMap<>();
         map.put("userId", String.valueOf(getMemberSharedPreference().getUserid()));
-        map.put("gender", String.valueOf(gender)== null ? "0":String.valueOf(gender));
+        map.put("gender", String.valueOf(gender));
         map.put("truename", et_truename.getText()== null ? "":et_truename.getText().toString());
         map.put("mobile",et_mobile.getText()== null ? "":et_mobile.getText().toString());
         map.put("skype",et_skype.getText()== null ? "":et_skype.getText().toString());
@@ -495,6 +475,10 @@ public class UserCenterActivity extends BaseActivity implements View.OnClickList
         editor.putString("sound", String.valueOf(1));
         editor.putString("career", et_career.getText().toString());
         editor.putString("areaId", String.valueOf(areaid));
+        editor.putString("province",choose_province.getText().toString());
+        editor.putString("city",choose_city.getText().toString());
+        editor.putString("gender", String.valueOf(gender));
+        editor.putString("arrchildid",arrchildid);
         editor.commit();
     }
 
