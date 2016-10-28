@@ -243,6 +243,18 @@ public class MyActivity extends BaseActivity{
             case R.id.llShare:
                 showShare(this, null, false);
                 break;
+            case R.id.llCustomer:
+                if(Data().equals("")) {
+                    intent = new Intent();
+                    intent.setClass(context, HostActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+//                }else{
+//                    intent = new Intent();
+//                    intent.setClass(context,.class);
+//                    startActivity(intent);
+//                }
         }
     }
 

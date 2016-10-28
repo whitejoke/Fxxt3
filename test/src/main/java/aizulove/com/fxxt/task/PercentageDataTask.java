@@ -39,7 +39,7 @@ public class PercentageDataTask extends AsyncTask<Void, Void, List<Percentage>> 
         judgeInternet = NetWork.checkNetWorkStatus(context);
         try {
             if (judgeInternet) {
-                String url = VariablesOfUrl.APP_BASE_URL + VariablesOfUrl.GETPERCENTAGELIST;
+                String url = VariablesOfUrl.APP_BASE_URL + VariablesOfUrl.GETPERCENTAGEMES;
                 System.out.println("url=="+url);
                 StringBuilder jsonStr = NetWork.postStringFromUrl(url, map);
                 if (jsonStr.toString().equals("[]")) {

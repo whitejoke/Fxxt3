@@ -102,6 +102,8 @@ public class VariablesOfUrl {
 
 	public static  final  String ADDATTENTIONLOGO="addAttentionLogo";
 
+	public static final String GETCOUPONBYUSERID="getCouponByUserId";
+
 	public static  final  String CANCELATTENTION="cancelAttention";
 
 	public static  final  String LOGINMEMBER="loginMember";
@@ -130,7 +132,7 @@ public class VariablesOfUrl {
 
 	public static  final  String UPLOADPOST="uploadPost2";
 
-	public static  final  String GETPERCENTAGELIST="getPercentageList";
+	public static  final  String GETPERCENTAGEMES="getPercentageMes";
 
 	public static  final  String GETHOMEPAGELIST="getHomePageList";
 

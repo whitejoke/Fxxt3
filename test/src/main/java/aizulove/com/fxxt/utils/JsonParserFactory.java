@@ -31,6 +31,7 @@ import aizulove.com.fxxt.modle.entity.Withdraw;
 public class JsonParserFactory {
 
     protected static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    //protected static SimpleDateFormat dateFormatHMS=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     /**
      * 车标列表解析
      */
@@ -56,7 +57,8 @@ public class JsonParserFactory {
 
     public static List<Percentage> jsonParserPercentageList(String jsonStr)throws Exception {
         JSONObject object = new JSONObject(jsonStr);
-        JSONArray ja = object.getJSONArray("info");
+        JSONObject object1=object.getJSONObject("info");
+        JSONArray ja = object1.getJSONArray("percentage");
         int jaSize = ja.length();
         List<Percentage> list = new ArrayList<Percentage>();
         for (int i = 0; i < jaSize; i++) {
@@ -70,7 +72,8 @@ public class JsonParserFactory {
             message.setOrderId(jo.getString("orderId"));//
             message.setTruename(jo.getString("truename"));
             message.setTitle(jo.getString("title"));
-            message.setProportion(jo.getString("proportion"));
+            message.setProportion(jo.getString("point"));
+            message.setCreateDate(dateFormat.parse(jo.getString("createDate")));
             list.add(message);
         }
         return list;
@@ -79,20 +82,22 @@ public class JsonParserFactory {
 
     public static List<Recharge> jsonParserRechargeList(String jsonStr)throws Exception {
         JSONObject object = new JSONObject(jsonStr);
-        JSONArray ja = object.getJSONArray("info");
+        JSONObject object1=object.getJSONObject("info");
+        JSONArray ja = object1.getJSONArray("percentage");
         int jaSize = ja.length();
         List<Recharge> list = new ArrayList<Recharge>();
         for (int i = 0; i < jaSize; i++) {
             JSONObject jo = ja.getJSONObject(i);
             Recharge message = new Recharge();
             message.setId(jo.getInt("id"));
-            message.setMoney(jo.getDouble("money"));
-            message.setRechargeCode(jo.getString("rechargeCode"));
-            if (!"null".equals(jo.getString("userId"))) {
-             message.setUserId(Integer.parseInt(jo.getString("userId")));//
-            }
+            message.setAmont(Float.parseFloat(jo.getString("amont")));
+            message.setName(jo.getString("name"));
+            message.setLevel(jo.getString("level"));//
+            // message.setCreateDate(dateFormat.parse(jo.getString("createDate")));
+            message.setOrderId(jo.getString("orderId"));//
+            message.setTruename(jo.getString("truename"));
+            message.setTitle(jo.getString("title"));
             message.setCreateDate(dateFormat.parse(jo.getString("createDate")));
-            message.setStatus(jo.getInt("status"));//
             list.add(message);
         }
         return list;
@@ -115,6 +120,7 @@ public class JsonParserFactory {
                 message.setConfirmDate(dateFormat.parse(jo.getString("confirmDate")));//
             }
             message.setCreateDate(dateFormat.parse(jo.getString("createDate")));
+            message.setReason(jo.getString("reason"));
             message.setStatus(jo.getInt("status"));//
             message.setTrade(jo.getString("trade"));
             message.setTruename(jo.getString("truename"));
@@ -908,7 +914,7 @@ public class JsonParserFactory {
     }
     public static  String getReferralCodeByUserId(String jsonStr)throws JSONException{
         JSONObject object = new JSONObject(jsonStr);
-        String code=object.getString("referralCode");
+        String code=object.getString("info");
         return code;
     }
 
@@ -972,7 +978,7 @@ public class JsonParserFactory {
         if (code.equals("1001")){
             return message;
         }else{
-            return "关注成功";
+            return message;
         }
     }
 

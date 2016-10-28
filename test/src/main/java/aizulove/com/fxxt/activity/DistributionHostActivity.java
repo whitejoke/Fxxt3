@@ -13,7 +13,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,7 +29,6 @@ import aizulove.com.fxxt.R;
 import aizulove.com.fxxt.adapter.ViewPagerAdapter;
 import aizulove.com.fxxt.modle.entity.Member;
 import aizulove.com.fxxt.modle.page.PercentagePage;
-import aizulove.com.fxxt.modle.page.RechargePage;
 import aizulove.com.fxxt.modle.page.WithdrawPage;
 import aizulove.com.fxxt.utils.JsonParserFactory;
 import aizulove.com.fxxt.utils.NetWork;
@@ -95,14 +94,13 @@ public class DistributionHostActivity extends BaseActivity implements View.OnCli
 	 */
 	protected void DataTask(){
 		mTab.clear();
-		mTab.add(new PercentagePage("佣金")) ;
-		mTab.add(new RechargePage("充值")) ;
-		mTab.add(new WithdrawPage("取现")) ;
+		mTab.add(new PercentagePage("已获佣金",0)) ;
+		mTab.add(new PercentagePage("审核佣金",1)) ;
+		mTab.add(new WithdrawPage("到账佣金")) ;
 		mViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), mTab));
 		mTabLayout.setViewPager(mViewPager);
 		jiner.setText(String.valueOf(getMemberSharedPreference().getMoney()));
-		Log.i("susu",getMemberSharedPreference().getLevel());
-		Log.i("susu",getMemberSharedPreference().getReferralCode());
+
 		if (!getMemberSharedPreference().getLevel().equals("普通会员")&&!getMemberSharedPreference().getLevel().equals("")){
 			fenxiaoma.setVisibility(View.VISIBLE);
 			if (!getMemberSharedPreference().getReferralCode().equals("")&&!getMemberSharedPreference().getReferralCode().equals("null")&&!getMemberSharedPreference().getReferralCode().equals(null)){
@@ -133,7 +131,7 @@ public class DistributionHostActivity extends BaseActivity implements View.OnCli
 				startActivityForResult(intent, 21);
 				break;
 			case R.id.tv_fenxiaocode:
-				if (tv_fenxiaocode.getText().equals("获取分销码")){
+				if (TextUtils.equals("获取分销码",tv_fenxiaocode.getText())){
 					Map<String,String> map=new HashMap<>();
 					map.put("userid", String.valueOf(getMemberSharedPreference().getUserid()));
 					new GetReferralCodeTask(context,map).execute();

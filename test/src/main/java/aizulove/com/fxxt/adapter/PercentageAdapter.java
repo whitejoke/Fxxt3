@@ -5,10 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+
 import aizulove.com.fxxt.R;
 import aizulove.com.fxxt.modle.entity.Percentage;
 
@@ -48,19 +49,21 @@ public class PercentageAdapter extends BaseAdapter {
             holder = new ViewHolder();
             convertView = mInflater.inflate(R.layout.activity_percentage_item, null);
             holder.username = (TextView) convertView.findViewById(R.id.username);
-            holder.leve = (TextView) convertView.findViewById(R.id.leve);
+            holder.leve = (TextView) convertView.findViewById(R.id.level);
             holder.productname = (TextView) convertView.findViewById(R.id.product_name);
             holder.yj = (TextView) convertView.findViewById(R.id.yj);
             holder.yjbl = (TextView) convertView.findViewById(R.id.yjbl);
+            holder.date= (TextView) convertView.findViewById(R.id.date);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.username.setText(list.get(postion).getTruename());
         holder.leve.setText("等级:"+list.get(postion).getLevel());
-       holder.productname.setText(list.get(postion).getTitle());
+        holder.productname.setText(list.get(postion).getTitle());
         holder.yj.setText(String.valueOf(list.get(postion).getAmont()));
         holder.yjbl.setText(list.get(postion).getProportion()+"%");
+        holder.date.setText(new SimpleDateFormat("yyyy-MM-dd").format(list.get(postion).getCreateDate()));
         return convertView;
     }
 
@@ -70,6 +73,7 @@ public class PercentageAdapter extends BaseAdapter {
         private TextView productname;
         private TextView yj;
         private TextView yjbl;
+        private TextView date;
     }
 
 }

@@ -1,5 +1,6 @@
 package aizulove.com.fxxt.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,14 +23,18 @@ import aizulove.com.fxxt.view.GridListView;
  * Created by moon.zhong on 2015/3/9.
  */
 public class PercentageFragment extends Fragment implements GridListView.OnMyGridViewRefreshListener{
-
+    private int type;
     private  View view;
     private GridListView listView;
     private PercentageAdapter adapter;
     private List<Percentage> listMessage = new ArrayList<Percentage>();
-    public static Fragment instance(){
-        PercentageFragment fragment = new PercentageFragment() ;
+    public static Fragment instance(int type){
+        PercentageFragment fragment = new PercentageFragment(type) ;
         return fragment ;
+    }
+    @SuppressLint("ValidFragment")
+    public PercentageFragment(int type){
+        this.type=type;
     }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,6 +63,7 @@ public class PercentageFragment extends Fragment implements GridListView.OnMyGri
         listView.setOnMyGridViewRefreshListener(this);
         Map<String, String> map = new HashMap<String, String>();
         map.put("userId",getMemberSharedPreference().getUserid()+"");//getMemberSharedPreference().getUserid()
+        map.put("type",type+"");
         map.put("num","9999");
         map.put("page","1");
         new PercentageDataTask(getContext(),map,listMessage,adapter,listView).execute();

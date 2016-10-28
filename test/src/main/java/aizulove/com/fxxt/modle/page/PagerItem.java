@@ -17,6 +17,8 @@ public  class PagerItem {
 
     protected ImageView rightimageView;
 
+    protected int type;
+
 
     public  Fragment createFragment(){
         return null;

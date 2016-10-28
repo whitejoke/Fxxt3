@@ -44,6 +44,7 @@ import aizulove.com.fxxt.adapter.PageAdapter;
 import aizulove.com.fxxt.modle.entity.Pinglun;
 import aizulove.com.fxxt.modle.entity.Product;
 import aizulove.com.fxxt.task.EditAddressTask;
+import aizulove.com.fxxt.task.YouhuiTask;
 import aizulove.com.fxxt.utils.JsonParserFactory;
 import aizulove.com.fxxt.utils.NetWork;
 import aizulove.com.fxxt.utils.VariablesOfUrl;
@@ -71,7 +72,7 @@ public class ProductActivity extends BaseActivity {
     private RadioButton radioButton,rb_pop_color,rb_pop_size;
     private DisplayImageOptions options;
 
-    private Button btn_add,btn_buy,btn_left,btn_right,btn_recognize;
+    private Button btn_add,btn_buy,btn_left,btn_right,btn_recognize,btn_youhui;
     private int pop_count=1;
     private double pop_amount;
     private String url=VariablesOfUrl.ADDCART;
@@ -129,6 +130,7 @@ public class ProductActivity extends BaseActivity {
     private void initBottomLayout(final Product result, final String type) {
         final Dialog dialog = new Dialog(ProductActivity.this, R.style.MyDialogStyleBottom);
         final View dialogView = LayoutInflater.from(ProductActivity.this).inflate(R.layout.car_dialog,null);
+        btn_youhui= (Button) dialogView.findViewById(R.id.btn_youhui);
         tv_pop_tile= (TextView) dialogView.findViewById(R.id.tv_pop_title);
         tv_pop_price= (TextView) dialogView.findViewById(R.id.tv_pop_price);
         tv_count= (TextView) dialogView.findViewById(R.id.tv_count);
@@ -209,6 +211,15 @@ public class ProductActivity extends BaseActivity {
                     pop_amount=Double.parseDouble(price.getText().toString())*pop_count;
                     tv_pop_price.setText("总价:¥ "+String.valueOf(pop_amount));
                 }
+            }
+        });
+        btn_youhui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("susu","yes");
+                Map<String,String> map=new HashMap<String, String>();
+                map.put("userId", String.valueOf(getMemberSharedPreference().getUserid()));
+                new YouhuiTask(context,map).execute();
             }
         });
         pop_amount=Double.parseDouble(price.getText().toString())*pop_count;

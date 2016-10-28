@@ -33,8 +33,16 @@ public class Withdraw {
 	
 
 	private Date confirmDate;//确认时间
-	
-	
+
+	private String reason;
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
 
 	public Integer getUserId() {
 		return userId;

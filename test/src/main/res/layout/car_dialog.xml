@@ -164,8 +164,17 @@
                 android:text="+"
                 android:textSize="20sp"
                 android:textColor="#000"
-
                 />
+            <Button
+                android:layout_marginLeft="30dp"
+                android:id="@+id/btn_youhui"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:text="领取优惠券"
+                android:textSize="14sp"
+                android:textColor="#0570ce"/>
 
         </LinearLayout>
 

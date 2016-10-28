@@ -11,10 +11,11 @@ public class PercentagePage extends PagerItem{
 
     public Fragment createFragment(){
 
-        return PercentageFragment.instance() ;
+        return PercentageFragment.instance(type) ;
     }
 
-    public PercentagePage(String mTitle){
+    public PercentagePage(String mTitle,int type){
         this.mTitle=mTitle;
+        this.type=type;
     }
 }

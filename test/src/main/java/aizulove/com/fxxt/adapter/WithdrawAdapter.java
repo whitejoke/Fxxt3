@@ -5,15 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
 import aizulove.com.fxxt.R;
-import aizulove.com.fxxt.modle.entity.Percentage;
-import aizulove.com.fxxt.modle.entity.Reshipping;
 import aizulove.com.fxxt.modle.entity.Withdraw;
 
 /**
@@ -56,6 +54,8 @@ public class WithdrawAdapter extends BaseAdapter {
             holder.money = (TextView) convertView.findViewById(R.id.money);
             holder.status = (TextView) convertView.findViewById(R.id.status);
             holder.create = (TextView) convertView.findViewById(R.id.create);
+            holder.reason = (TextView) convertView.findViewById(R.id.reason);
+            holder.ll_reason= (LinearLayout) convertView.findViewById(R.id.ll_reason);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -63,7 +63,7 @@ public class WithdrawAdapter extends BaseAdapter {
 
         holder.t_ordersn.setText("提现单号:"+list.get(postion).getWithdrawId());
         holder.zhanhao.setText("提现帐号:"+list.get(postion).getTrade());
-        holder.create.setText(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(list.get(postion).getCreateDate()));
+        holder.create.setText(new SimpleDateFormat("yyyy-MM-dd").format(list.get(postion).getCreateDate()));
         holder.money.setText("提现金额:￥"+list.get(postion).getAmont());
         if (list.get(postion).getStatus()==0) {
             holder.status.setText("审核中");
@@ -73,7 +73,11 @@ public class WithdrawAdapter extends BaseAdapter {
             holder.status.setTextColor(context.getResources().getColor(R.color.green));
         }else if (list.get(postion).getStatus()==2){
             holder.status.setText("审核拒绝");
+            holder.ll_reason.setVisibility(View.VISIBLE);
+            holder.reason.setText("拒绝理由:"+list.get(postion).getReason());
+            holder.reason.setTextColor(context.getResources().getColor(R.color.colorAccent));
             holder.status.setTextColor(context.getResources().getColor(R.color.colorAccent));
+
         }
         return convertView;
     }
@@ -84,6 +88,8 @@ public class WithdrawAdapter extends BaseAdapter {
         private TextView money;
         private TextView status;
         private TextView create;
+        private TextView reason;
+        private LinearLayout ll_reason;
     }
 
 }

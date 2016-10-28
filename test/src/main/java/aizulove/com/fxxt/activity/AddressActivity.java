@@ -50,7 +50,6 @@ public class AddressActivity extends BaseActivity implements View.OnClickListene
         initData();
         findViews();
         DataTask();
-        //initRefresh();
         HiddenMeun();
     }
     private void initRefresh() {
