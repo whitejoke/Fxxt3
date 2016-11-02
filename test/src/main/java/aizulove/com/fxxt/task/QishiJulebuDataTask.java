@@ -46,8 +46,8 @@ public class QishiJulebuDataTask extends AsyncTask<Void, Void, List<Post>> {
         try {
             if (judgeInternet) {
                 String url = VariablesOfUrl.APP_BASE_URL + VariablesOfUrl.GETPOSTLIST;
-                System.out.println("url=="+url);
                 StringBuilder jsonStr = NetWork.postStringFromUrl(url, map);
+
                 if (jsonStr.toString().equals("[]")) {
                     typeFlag = false;
                 }

@@ -35,21 +35,6 @@ public class MyOderActivity extends BaseActivity implements SlidingTabLayout.Add
         HiddenMeun();
     }
 
-//    private void initDta() {
-//        type=getIntent().getStringExtra("type");
-//        if (type.equals("orderPay")){
-//            AlertDialog.Builder builder = new AlertDialog.Builder(MyOderActivity.this);
-//            builder.setMessage("支付完成");
-//            builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    dialog.dismiss();
-//                }
-//            });
-//            builder.create().show();
-//        }
-//    }
-
     protected void findViews() {
         rightimageView=(ImageView)findViewById(R.id.rightimageView);
         blakimageView= ((ImageView)findViewById(R.id.blakimageView));
@@ -71,11 +56,11 @@ public class MyOderActivity extends BaseActivity implements SlidingTabLayout.Add
      * 逻辑处理方法
      */
     protected void DataTask(){
-        mTab.add(new OrderPage("全部",getMemberSharedPreference().getUsername())) ;
-        mTab.add(new OrderPage("待付款",getMemberSharedPreference().getUsername())) ;
-        mTab.add(new OrderPage("待发货",getMemberSharedPreference().getUsername())) ;
-        mTab.add(new OrderPage("待收货",getMemberSharedPreference().getUsername())) ;
-        mTab.add(new OrderPage("退货申请",getMemberSharedPreference().getUsername())) ;
+        mTab.add(new OrderPage("全部",getMemberSharedPreference().getUsername(),0)) ;
+        mTab.add(new OrderPage("待付款",getMemberSharedPreference().getUsername(),1)) ;
+        mTab.add(new OrderPage("待发货",getMemberSharedPreference().getUsername(),2)) ;
+        mTab.add(new OrderPage("待收货",getMemberSharedPreference().getUsername(),3)) ;
+        mTab.add(new OrderPage("退货申请",getMemberSharedPreference().getUsername(),4)) ;
         mViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), mTab));
         mTabLayout.setViewPager(mViewPager);
         mTabLayout.setOnAddListener(this);

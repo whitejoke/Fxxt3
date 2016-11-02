@@ -2,7 +2,7 @@ package aizulove.com.fxxt.utils;
 
 public class VariablesOfUrl {
 
-		public static final String APP_BASE_URL = "http://192.168.1.111/fxxt/data/data!";//http://114.215.238.0:9001/fxxt/data/data!
+		public static final String APP_BASE_URL = "http://114.215.238.0:9001/fxxt/data/data!";//http://114.215.238.0:9001/fxxt/data/data!
 	//http://192.168.1.123:80/fxxt/data/data!192.168.1.111
 
 	public static final String imagePath="http://114.215.238.0:9001/fxxt";//http://114.215.238.0:9001/fxxt
@@ -103,6 +103,8 @@ public class VariablesOfUrl {
 	public static  final  String ADDATTENTIONLOGO="addAttentionLogo";
 
 	public static final String GETCOUPONBYUSERID="getCouponByUserId";
+
+	public static final String SAVEMESSAGE="saveMessage";
 
 	public static  final  String CANCELATTENTION="cancelAttention";
 

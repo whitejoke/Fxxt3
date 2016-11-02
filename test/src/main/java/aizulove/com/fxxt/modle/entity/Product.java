@@ -87,6 +87,15 @@ public class Product implements Serializable {
     private String out_v1;
     private String out_v2;
     private String out_v3;
+    private String postcode;
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
 
     public String getContent() {
         return content;

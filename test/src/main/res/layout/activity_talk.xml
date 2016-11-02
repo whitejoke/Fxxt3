@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#c8c8c8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/activity_head"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/talk_title"
+            android:layout_margin="10dp"
+            android:background="@drawable/talk_border"
+            android:padding="5dp"
+            android:hint="标题"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/talk_content"
+            android:padding="5dp"
+            android:background="@drawable/talk_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="left"
+            android:lines="8"
+            android:hint="@string/input_talk"/>
+        <Button
+            android:id="@+id/talk_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:background="@drawable/sh_buy"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

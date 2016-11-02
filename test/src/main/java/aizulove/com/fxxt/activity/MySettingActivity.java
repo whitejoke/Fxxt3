@@ -101,9 +101,11 @@ public class MySettingActivity extends BaseActivity {
         }
     }
     public void onRefsh(){
-        Intent intent=new Intent();
-        intent.setClass(MySettingActivity.this,MySettingActivity.class);
-        startActivity(intent);
+        try {
+            tv_load.setText(DataCleanManager.getTotalCacheSize(MySettingActivity.this));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

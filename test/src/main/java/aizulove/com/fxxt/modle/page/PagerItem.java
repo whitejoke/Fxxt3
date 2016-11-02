@@ -16,6 +16,7 @@ public  class PagerItem {
     protected Context context;
 
     protected ImageView rightimageView;
+    protected int orderStatus;
 
     protected int type;
 

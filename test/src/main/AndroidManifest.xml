@@ -91,6 +91,10 @@
             android:screenOrientation="portrait"
             android:name=".activity.ActiveHostActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <!--订单详情-->
+        <activity android:name=".activity.OrderDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <!--奇葩详情-->
 
@@ -99,6 +103,8 @@
             android:screenOrientation="portrait"
             android:name=".activity.QipaHostActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
 
 
         <!--My页-->
@@ -112,6 +118,11 @@
             android:screenOrientation="portrait"
             android:name=".activity.JifenActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--客服-->
+        <activity android:name=".activity.CustomActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <!--分销-->
         <activity

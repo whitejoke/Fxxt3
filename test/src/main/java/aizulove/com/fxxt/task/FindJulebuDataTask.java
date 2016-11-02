@@ -2,6 +2,7 @@ package aizulove.com.fxxt.task;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.cjj.MaterialRefreshLayout;
 
@@ -48,7 +49,7 @@ public class FindJulebuDataTask extends AsyncTask<Void, Void, List<Post>> {
             if (judgeInternet) {
                 String url = VariablesOfUrl.APP_BASE_URL + VariablesOfUrl.GETPOSTLIST;
                 StringBuilder jsonStr = NetWork.postStringFromUrl(url, map);
-                //Log.i("susu", String.valueOf(jsonStr));
+                Log.i("susu", String.valueOf(jsonStr));
                 if (jsonStr.toString().equals("[]")) {
                     typeFlag = false;
                 }

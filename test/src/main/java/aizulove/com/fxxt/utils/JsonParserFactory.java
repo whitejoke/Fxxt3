@@ -603,6 +603,11 @@ public class JsonParserFactory {
             message.setTrade_no(jo.getString("trade_no"));
             message.setNote(jo.getString("note"));
             message.setStatus(jo.getInt("status"));
+
+            message.setTruename(jo.getString("buyer_name"));
+            message.setTelephone(jo.getString("buyer_phone"));
+            message.setAddress(jo.getString("buyer_address"));
+            message.setPostcode(jo.getString("buyer_postcode"));
             list.add(message);
         }
         return list;

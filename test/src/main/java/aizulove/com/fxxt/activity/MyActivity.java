@@ -149,7 +149,7 @@ public class MyActivity extends BaseActivity{
             intent = new Intent();
             intent.setClass(context, DistributionHostActivity.class);
             startActivity(intent);}
-        break;
+            break;
             case  R.id.myyouhuirl:
                 if(Data().equals("")) {
                     intent = new Intent();
@@ -249,12 +249,11 @@ public class MyActivity extends BaseActivity{
                     intent.setClass(context, HostActivity.class);
                     startActivity(intent);
                     finish();
+                } else{
+                    intent = new Intent();
+                    intent.setClass(context,CustomActivity.class);
+                    startActivity(intent);
                 }
-//                }else{
-//                    intent = new Intent();
-//                    intent.setClass(context,.class);
-//                    startActivity(intent);
-//                }
         }
     }
 

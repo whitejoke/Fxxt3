@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import aizulove.com.fxxt.R;
+import aizulove.com.fxxt.activity.OrderDetailActivity;
 import aizulove.com.fxxt.activity.TransactionActivity;
 import aizulove.com.fxxt.adapter.OrderAdapter;
 import aizulove.com.fxxt.modle.entity.Product;
@@ -34,16 +35,18 @@ public class OrderFragment extends Fragment implements AdapterView.OnItemClickLi
     private OrderAdapter adapter;
     private String type;
     private String name;
+    private int orderStatus;
     private SwipeRefreshLayout srl;
     private String url= VariablesOfUrl.GETORDERLISTBYUSERNAME;
     private List<Product> listMessage = new ArrayList<Product>();
-    public static Fragment instance(String type,String name){
-        OrderFragment fragment = new OrderFragment(type,name) ;
+    public static Fragment instance(String type,String name,int orderStatus){
+        OrderFragment fragment = new OrderFragment(type,name,orderStatus) ;
         return fragment ;
     }
-    public OrderFragment(String type,String name){
+    public OrderFragment(String type,String name,int orderStatus){
         this.type=type;
         this.name=name;
+        this.orderStatus=orderStatus;
     }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -70,7 +73,7 @@ public class OrderFragment extends Fragment implements AdapterView.OnItemClickLi
         map.put("page","1");
         map.put("num", "222");
         map.put("username", name);
-        //Log.i("susu",getMemberSharedPreference().getUsername().toString());
+        map.put("orderStatus", String.valueOf(orderStatus));
         new OrderTaSK(getContext(),listMessage,adapter,map,url).execute();
     }
 
@@ -82,12 +85,21 @@ public class OrderFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent=new Intent();
-        intent.setClass(getContext(),TransactionActivity.class);
-        Bundle bundle=new Bundle();
-        bundle.putSerializable("product",listMessage.get(position));
-        bundle.putString("type","order");
-        intent.putExtras(bundle);
-        startActivity(intent);
+        if (listMessage.get(position).getStatus()==1){
+            Intent intent=new Intent();
+            intent.setClass(getContext(),TransactionActivity.class);
+            Bundle bundle=new Bundle();
+            bundle.putSerializable("product",listMessage.get(position));
+            bundle.putString("type","order");
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }else {
+            Intent intent=new Intent();
+            intent.setClass(getContext(), OrderDetailActivity.class);
+            Bundle bundle=new Bundle();
+            bundle.putSerializable("product",listMessage.get(position));
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }
     }
 }

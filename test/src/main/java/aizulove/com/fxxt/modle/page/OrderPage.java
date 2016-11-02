@@ -9,11 +9,12 @@ import aizulove.com.fxxt.fragment.OrderFragment;
  */
 public class OrderPage extends PagerItem {
     public Fragment createFragment(){
-        return OrderFragment.instance(mTitle, name) ;
+        return OrderFragment.instance(mTitle, name,orderStatus) ;
     }
 
-    public OrderPage(String mTitle,String name){
+    public OrderPage(String mTitle,String name,int orderStatus){
         this.mTitle=mTitle;
         this.name=name;
+        this.orderStatus=orderStatus;
     }
 }
